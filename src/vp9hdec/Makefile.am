@@ -25,6 +25,7 @@ SUBDIRS =
 AM_CPPFLAGS = \
 	-DPTHREADS		\
 	$(DRM_CFLAGS)		\
+	$(DRM_INTEL_CFLAGS)	\
 	$(LIBVA_DEPS_CFLAGS)	\
 	-I$(top_srcdir)/src	\
 	-I$(top_srcdir)/src/cmrt	\
@@ -48,7 +49,8 @@ driver_ldflags = \
 
 driver_libs = \
 	-lpthread -lm -ldl	\
-	$(DRM_LIBS) -ldrm_intel	\
+	$(DRM_LIBS)		\
+	$(DRM_INTEL_LIBS)	\
 	$(LIBVA_DEPS_LIBS)	\
 	$(NULL)
 
